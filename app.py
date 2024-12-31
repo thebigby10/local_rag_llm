@@ -141,7 +141,7 @@ def get_response():
     query_embedding = embed_query(query) 
     data = get_context_from_faiss(query_embedding)
     print(data[0])
-    response = query_gemini(data, query)
+    response = query_gemini(data[0], query)
 
     return jsonify(response), 200
 
